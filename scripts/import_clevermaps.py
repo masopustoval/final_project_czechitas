@@ -22,9 +22,9 @@ f.write('kod,vyska_zmerena,vyska_odhad_pocty_bytu,vyska_odhad_pocty_pater,zpusob
 for i in res:
     zaznacene = 0 if i[1] < 1 else 1
     if i[2] is None:
-        vyska_odhad_kombinace = i[3]
+        vyska_kompletni = i[3]
     else:
-        vyska_odhad_kombinace = i[2]
+        vyska_kompletni = i[2]
     line = ','.join([str(a) for a in i]) + f',{zaznacene}\n'
     line = line.replace('None','')
     f.write(line)
