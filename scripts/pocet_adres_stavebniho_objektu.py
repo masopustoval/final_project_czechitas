@@ -27,7 +27,7 @@ for zpusob_vyuziti_kod in range(1,31):
 for kod, pocet_adres in objekt.items():
     conn_insert = psycopg2.connect(host="172.18.0.2", dbname="ruian", user="ruianuser", password='123456')
     cur1 = conn_insert.cursor()
-    cur1.execute("UPDATE vyska_stavebnich_objektu SET pocet_adres = {} WHERE id_stavebni_objekt = {}".format(len(pocet_adres), kod))
+    cur1.execute("UPDATE vyska_stavebnich_objektu SET pocet_adres = {} WHERE id_stavebni_objekt = {}".format((len(pocet_adres), kod))
     conn_insert.commit()
 print('DONE')
 
